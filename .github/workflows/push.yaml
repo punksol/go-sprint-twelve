@@ -9,6 +9,9 @@ jobs:
       - name: Run Unit Tests
         run: GOOS=linux GOARCH=amd64 go test ./...
 
+      - name: Run Race Tests
+        run: go test -race ./...
+
       - name: Vet
         run: |
           go vet ./...
